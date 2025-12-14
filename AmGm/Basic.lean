@@ -8,4 +8,8 @@ Everything follows from `0 ≤ (a - b) ^ 2`.
 
 namespace AmGm
 
+/-- `2xy ≤ x² + y²` for all reals. -/
+lemma two_mul_le_add_sq (x y : ℝ) : 2 * x * y ≤ x ^ 2 + y ^ 2 := by
+  sorry
+
 end AmGm
