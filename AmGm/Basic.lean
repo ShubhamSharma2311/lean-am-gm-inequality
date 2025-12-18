@@ -14,6 +14,6 @@ lemma two_mul_le_add_sq (x y : ℝ) : 2 * x * y ≤ x ^ 2 + y ^ 2 := by
 
 /-- Squared form: `ab ≤ ((a + b) / 2)²`. -/
 lemma mul_le_sq_avg (a b : ℝ) : a * b ≤ ((a + b) / 2) ^ 2 := by
-  sorry
+  nlinarith [two_mul_le_add_sq a b]
 
 end AmGm
