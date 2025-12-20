@@ -18,6 +18,7 @@ lemma mul_le_sq_avg (a b : ℝ) : a * b ≤ ((a + b) / 2) ^ 2 := by
 
 /-- **AM–GM.** `√(ab) ≤ (a + b) / 2` for `0 ≤ a, b`. -/
 theorem am_gm {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) : Real.sqrt (a * b) ≤ (a + b) / 2 := by
-  sorry
+  rw [Real.sqrt_le_left (by linarith)]
+  exact mul_le_sq_avg a b
 
 end AmGm
