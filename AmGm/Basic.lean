@@ -21,4 +21,8 @@ theorem am_gm {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) : Real.sqrt (a * b) ≤ 
   rw [Real.sqrt_le_left (by linarith)]
   exact mul_le_sq_avg a b
 
+/-- Equality holds exactly when `a = b`. -/
+theorem mul_eq_sq_avg_iff (a b : ℝ) : a * b = ((a + b) / 2) ^ 2 ↔ a = b := by
+  sorry
+
 end AmGm
