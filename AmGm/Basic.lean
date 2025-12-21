@@ -23,6 +23,11 @@ theorem am_gm {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) : Real.sqrt (a * b) ≤ 
 
 /-- Equality holds exactly when `a = b`. -/
 theorem mul_eq_sq_avg_iff (a b : ℝ) : a * b = ((a + b) / 2) ^ 2 ↔ a = b := by
-  sorry
+  constructor
+  · intro h
+    have hsq : (a - b) ^ 2 = 0 := by nlinarith [h]
+    exact sub_eq_zero.mp (pow_eq_zero_iff two_ne_zero |>.mp hsq)
+  · rintro rfl
+    ring
 
 end AmGm
